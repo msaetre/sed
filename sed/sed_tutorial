@@ -1,0 +1,97 @@
+(Sed Section)
+
+Introduction
+
+sed (stream editor) is a powerful command line tool used for editing data streams.  Despite it being developed quite some time ago, it remains a commonly used application by those who appreciate and understand its power.  The tool itself can be quite daunting and easy to ignore at first glance, but pushing through the small learning curve can save you a lot of tedious work in the future.
+
+RegEx (RegExp / Regular Expressions)
+
+In order to master sed, you must first master regular expressions.  For a quick overview on regular expressions, goto the RegEx section.
+
+Sed Expression (-e)
+
+The expression passed in as a parameter tells sed what to do.  Here is the basic structure for an expression:
+
+> sed -e {command}/{regex}/{replacement}/{pattern flag}
+
+Let's break down this expression structure:
+- {command}: A character that refers to the type of operation that will be performed
+- {regex}: A regular expression that determines which parts of the stream will be matched
+- {replacement}: String to replace the matching portions of the stream with (optional depending on the command)
+- {pattern flag}: A character/number that typically indicates how to perform the regex match or replacement substitution
+
+Sed Commands
+
+- Substitute ('s')
+
+The command you are likely to use the most (by far) is the substitution command.  It simply tells sed to substitute whatever pattern the {regex} string matches with the given {replacement} string.  Depending on the {pattern flag} provided, the substitution can occur globally ('g'), case insensitively ('i'), first match per line only ('1'), second match per line only ('2'), etc.  Consider the following as a simple example:
+
+s/apple/orange/g        First line has apples.                        (try yourself in tester link)
+                        More apples on the apples second line.
+
+                        First line has oranges.
+                        More orange on the oranges second line.
+
+This example simple tells sed to find all the occurrences of the word 'apple' and replace them with 'orange'.  Here is a slightly more complex example:
+
+s/<.*
+
+
+
+
+- Transform ('y')
+
+
+
+
+
+
+
+
+
+BSD Sed Manual Page
+
+...
+
+
+
+
+
+
+(Regex Section)
+
+A regular expression is simply a sequence of characters that represent a pattern to match.  Consider the following RegEx as a basic example:
+
+^m.*s$
+
+Let's break down this example:
+- The '^' is a metacharacter (character with a special meaning) that matches the beginning of a line
+- The 'm' simply matches an 'm' character
+- The '.' is a metacharacter that matches any character
+- The '*' is a metacharacter that matches 0 or more of the previously specified character
+- The 's' matches an 's' character
+- The '$' is a metacharacter that matches the end of a line
+
+Here are a few lines that the previous RegEx would match:
+- mars
+- many people like perogies
+- m s s s s
+
+Here are a few lines that the previous RegEx would not match:
+- master (Why? The 's' is not just before the end of the line)
+- Mars (Why? The 'M' is upper case)
+- animals (Why? The 'm' needs to be the first character)
+
+You might now be wondering how to match a '^' or '*' character, without the RegEx pattern treating it as a metacharacter.  The answer is by using what is called an escape character.  While some applications will allow you to specify the escape character to use, the '\' character is used in the world of regular expressions.  Let's take a look at another, more complex example:
+
+[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z0-9]+
+
+Breakdown:
+- The '[' is a metacharacter that represents the beginning of a bracket expression.  
+- The 'A-Z' within the bracket expression indicates a range ('-') of possible characters matches between 'A' and 'Z'.  The range still only refers to one character, but any between 'A' and 'Z' are allowed.
+- The 'a-z' indicates a range of characters between 'a' and 'z'
+- The '0-9' indicates a range of characters between '0' and '9' 
+
+
+
+

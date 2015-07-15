@@ -1,0 +1,210 @@
+#inputText ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #eee;
+}
+
+#inputText ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #bbb;
+    width: 10px;
+    height: 10px;
+}
+
+#inputText ::-webkit-scrollbar-thumb:window-inactive {
+  background-color: #ddd;
+}
+
+#inputText ::-webkit-scrollbar-corner {
+  display: none;
+}
+
+
+#outputText::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #444;
+}
+ 
+/* Handle */
+#outputText::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #333;
+}
+
+#outputText::-webkit-scrollbar-thumb:window-inactive {
+  background-color: #333;
+}
+
+#outputText::-webkit-scrollbar-corner {
+  display: none;
+}
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+
+margin: 0;
+background: #eeeeee; /* Old browsers */
+background: -moz-linear-gradient(top, #eeeeee 0%, #cccccc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* IE10+ */
+background: linear-gradient(to bottom, #eeeeee 0%,#cccccc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+
+}
+
+#mainbody {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+table {
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+
+table td {
+  padding: 0;
+}
+
+header {
+  height: 70px;
+  background: #25282d;
+  border: 0px solid #66afff;
+  border: 0px solid #afff66;
+  border-bottom-width: 10px;
+  border-radius-top-left:7px;
+  border-radius-top-right:7px;
+  box-sizing: border-box;
+  padding: 0.5em;
+  padding-left: 1em;
+  box-shadow: -5px 0 4px -5px #111 inset;
+}
+
+footer {
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: #25282d;
+}
+
+#execute {
+  left: 0;
+  position: absolute;
+  margin: 0;
+	background-color:#44c767;
+	border:0px solid #18ab29;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:verdana;
+	font-size:10px;
+	padding: 3px 3px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+  outline: none;
+  height: 50px;
+  width: 20px;
+  display: none;
+}
+
+#execute:hover {
+	background-color:#5cbf2a;
+}
+
+#matchCount {
+  font-family: verdana;
+  font-weight: bold;
+  font-size: 20px;
+  color: #444;
+  position: absolute;
+  top: 85px;
+  left: 75%;
+  right: 25%;
+}
+
+#sed {
+  font-family: verdana, sans;
+  font-size: 105%;
+  height: 50px;
+  width: 50%;
+  border: 0px inset #bbb;
+  outline: none;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+
+  position: absolute;
+  left: 0;
+  top: 70px;
+
+  box-shadow: -5px 0 4px -5px #aaa inset;
+}
+
+#sed:focus {
+  background-color: #ffffee;
+}
+
+#outputPanel {
+  position: absolute;
+  top: 70px;
+  height: 50px;
+  right: 0;
+  width: 50%;
+  background-color: #555;
+}
+
+#outputText {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  font-size: 10px;
+  width: 50%;
+  border: 0px solid black;
+  outline: none;
+  overflow: auto;
+  white-space: wrap;
+  position: absolute;
+  top: 120px;
+  bottom: 60px;
+  right: 0;
+  background-color: #444;
+  color: #eee;
+  padding: 0.8em;
+  box-shadow: 0 5px 3px -6px #333 inset, -5px 0 3px -5px #333 inset;
+  box-sizing: border-box;
+}
+
+pre {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  font-size: 10px; 
+  margin: 0;
+  padding; 0;
+  tab-size: 2;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+}
+
+#inputText {
+    background-color: #eee; 
+    position: absolute;
+    width: 50%;
+    overflow: auto;
+    left: 0;
+    top: 120px;
+    bottom: 60px;
+    font-size: 10px;
+    /*box-shadow: 0 5px 3px -6px #aaa inset, -5px 0 3px -5px #555 inset;*/
+}
+
+span.highlight {
+  background-color: #ff1f66;
+  color: #fff;
+}
+
+
